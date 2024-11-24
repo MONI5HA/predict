@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Prediction Dashboard</h1>
+
+<h3>Top Foods Eaten in Canada</h3>
+<img src="/static/images/top_foods.png" alt="Top Foods" class="img-fluid">
+
+<h3>Top Nutrients Consumed in Canada</h3>
+<img src="/static/images/top_nutrients.png" alt="Top Nutrients" class="img-fluid">
+
+<h3>Average Nutrient Intake in Canada</h3>
+<img src="/static/images/average_nutrients.png" alt="Average Nutrients" class="img-fluid">
+
+<h3>Nutritional Deficiencies in Canada</h3>
+<img src="/static/images/nutritional_deficiencies.png" alt="Nutritional Deficiencies" class="img-fluid">
+
+<h3>Top Nutritional Contributors in Canada</h3>
+<img src="/static/images/nutritional_contributors.png" alt="Nutritional Contributors" class="img-fluid">
+
+<h3>Top Diseases Predicted Based on Nutritional Deficiencies</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Disease</th>
+            <th>Number of Deaths</th>
+        
+        </tr>
+    </thead>
+    <tbody>
+        {% for index, row in top_diseases.iterrows() %}
+        <tr>
+            <td>{{ row['Disease Name'] }}</td>
+            <td>{{ row['Number of deaths'] }}</td>
+     
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

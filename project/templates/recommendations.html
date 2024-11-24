@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Recommendations</h1>
+{% for disease, foods in recommendations.items() %}
+    <h3>Disease: {{ disease }}</h3>
+    {% for nutrient, food_list in foods.items() %}
+        <h4>Nutrient Deficiency: {{ nutrient }}</h4>
+        {% if food_list %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Food</th>
+                    <th>Content</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for food in food_list %}
+                <tr>
+                    <td>{{ food['Composite Description (TDS_FC_Label)'] }}</td>
+                    <td>{{ food.values() | list | last }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>No data available for {{ nutrient }}.</p>
+        {% endif %}
+    {% endfor %}
+{% endfor %}
+{% endblock %}
+        

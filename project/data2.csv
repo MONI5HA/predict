@@ -1,0 +1,57 @@
+﻿Country,Disease Name,Nutrient  Deficiency,Number of deaths,"mortality rate per 100,000 population"
+Canada,"Total, all causes of death  [A00-Y89]",null,"3,34,081",858.2
+Canada,Salmonella infections  [A01-A02],Zinc,12,0
+Canada,"Shigellosis and amoebiasis  [A03, A06]","Zinc, Vitamin A, Iron",0,0
+Canada,"Certain other intestinal infections  [A04, A07-A09]","Zinc, Vitamin A",772,2
+Canada,Tuberculosis  [A16-A19],"Vitamin D, Proteins",119,0.3
+Canada,Whooping cough  [A37],"Vitamin A, Proteins",0,0
+Canada,"Scarlet fever and erysipelas  [A38, A46]","Vitamin  C, Proteins",1,0
+Canada,Meningococcal infection  [A39],"Vitamin C, Zinc",6,0
+Canada,Sepsis  [A40-A41],"Vitamin D, Zinc","2,183",5.6
+Canada,Syphilis  [A50-A53],"Vitamin D, Vitamin C, Zinc",4,0
+Canada,Acute poliomyelitis  [A80],"Vitamin D, Vitamin A, Zinc",0,0
+Canada,"Arthropod-borne viral encephalitis  [A83-A84, A85.2]","Vitamin D, Vitamin A, Zinc",0,0
+Canada,Measles  [B05],"Vitamin A, Vitamin C, Zinc",0,0
+Canada,Viral hepatitis  [B15-B19],"Vitamin D, Vitamin A, Zinc",210,0.5
+Canada,Human immunodeficiency virus [HIV] disease  [B20-B24],"Vitamin D, Vitamin A, Zinc, Iron, Proteins",129,0.3
+Canada,Malaria  [B50-B54],"Vitamin A, Iron, Zinc",1,0
+Canada,Other and unspecified infectious and parasitic diseases and their sequelae 27,"Vitamin D, Vitamin A, Zinc, Iron","1,337",3.4
+Canada,Malignant neoplasms  [C00-C97],"Vitamin D, Vitamin A, Zinc","82,412",211.7
+Canada,"In situ neoplasms, benign neoplasms and neoplasms of uncertain or unknown behaviour  [D00-D48]","Vitamin D, Zinc, Calcium, Iron, Vitamin A, Vitamin E","1,803",4.6
+Canada,Anaemias  [D50-D64],"Iron, Vitamin B, Vitamin C, Vitamin A",654,1.7
+Canada,Diabetes mellitus  [E10-E14],"Magnesium, Vitamin D, Vitamin B, Zinc,  Omega-3","7,557",19.4
+Canada,Nutritional deficiencies  [E40-E64],"Vitamin A, Vitamin D, Vitamin C, Vitamin B, Iron, Zinc, Calcium, Magnesium, Protein, Omega-3",321,0.8
+Canada,"Dementia  [F010-F019, F03]","Vitamin B, Vitamin D, Omega-3,  Vitamin E, Vitamin C, Zinc","25,994",66.8
+Canada,"Meningitis  [G00, G03]","Vitamin C, Zinc, Vitamin B, Magnesium, Vitamin D, Omega-3",89,0.2
+Canada,Parkinson's disease  [G20-G21],"Vitamin D, Vitamin B, Omega-3, Magnesium, Iron, Vitamin E","3,617",9.3
+Canada,Alzheimer's disease  [G30],"Vitamin B, Vitamin D, Omega-3, Vitamin E, Vitamin C, Zinc","5,413",13.9
+Canada,Major cardiovascular diseases  [I00-I78],"Vitamin D, Omega-3, Magnesium, Potassium, Calcium, Vitamin K, Vitamin C, Iron","76,639",196.9
+Canada,Other disorders of circulatory system  [I80-I99],"Vitamin D, Omega-3, Magnesium, Potassium, Vitamin K, Vitamin C, Iron, Vitamin B",405,1
+Canada,Influenza and pneumonia  [J09-J18],"Vitamin C, Vitamin D, Zinc, Vitamin A, Vitamin E, Iron, Omega-3, Magnesium","5,985",15.4
+Canada,Other acute lower respiratory infections  [J20-J22],"Vitamin C, Vitamin D, Zinc, Omega-3, Vitamin A, Iron, Magnesium, Vitamin E",49,0.1
+Canada,Chronic lower respiratory diseases  [J40-J47],"Vitamin D, Vitamin A, Vitamin C, Omega-3, Zinc, Magnesium, Vitamin E, Iron","12,462",32
+Canada,"Pneumoconioses and chemical effects  [J60-J66, J68]","Vitamin C, Vitamin D, Zinc, Omega-3, Vitamin A, Iron, Magnesium, Vitamin E",109,0.3
+Canada,Pneumonitis due to solids and liquids  [J69],"Vitamin C, Vitamin D, Zinc, Omega-3, Vitamin A, Iron, Magnesium, Vitamin E","2,104",5.4
+Canada,"Other diseases of respiratory system  [J00-J06, J30-J39, J67, J70-J98]","Vitamin C, Vitamin D, Zinc, Omega-3, Vitamin A, Iron, Magnesium, Vitamin E","4,329",11.1
+Canada,Peptic ulcer  [K25-K28],"Vitamin C, Vitamin A, Zinc, Iron, Vitamin B, Magnesium",561,1.4
+Canada,Diseases of appendix  [K35-K38],"Vitamin C, Vitamin A, Zinc, Magnesium, Iron",64,0.2
+Canada,Hernia  [K40-K46],"Vitamin C, Vitamin A, Zinc, Iron, Vitamin D, Magnesium",498,1.3
+Canada,"Chronic liver disease and cirrhosis  [K70, K73-K74]","Vitamin A, Vitamin D, Vitamin B12, Zinc, Iron, Magnesium, Calcium","4,530",11.6
+Canada,Cholelithiasis and other disorders of gallbladder  [K80-K82],"Vitamin C, Vitamin A, Magnesium, Zinc, Vitamin D",565,1.5
+Canada,"Nephritis, nephrotic syndrome and nephrosis  [N00-N07, N17-N19, N25-N27]","Vitamin D, Vitamin A, Calcium, Iron, Magnesium, Zinc","4,234",10.9
+Canada,"Infections of kidney  [N10-N12, N13.6, N15.1]","Vitamin A, Vitamin C, Zinc, Vitamin D, Magnesium, Iron",207,0.5
+Canada,Hyperplasia of prostate  [N40],"Zinc, Vitamin D, Vitamin E, Omega-3, Vitamin C, Vitamin B",203,0.5
+Canada,Inflammatory diseases of female pelvic organs  [N70-N76],"Vitamin A, Vitamin C, Vitamin E, Zinc, Iron, Omega-3",34,0.1
+Canada,"Pregnancy, childbirth and the puerperium  [O00-O99]","Vitamin B, Iron, Calcium, Vitamin D, Omega-3, Zinc",30,0.1
+Canada,Certain conditions originating in the perinatal period  [P00-P96]," Vitamin B, Iron, Vitamin D, Calcium, Omega-3",959,2.5
+Canada,"Congenital malformations, deformations and chromosomal abnormalities  [Q00-Q99]"," Vitamin D, Vitamin B12, Iron, Calcium, Omega-3","1,037",2.7
+Canada,"Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified  [R00-R99]",null,"17,694",45.5
+Canada,"COVID-19  [U07.1, U07.2, U10.9]","Vitamin D, Zinc, Vitamin C, Iron, Magnesium, Omega-3","19,716",50.6
+Canada,All other diseases (residual) 28,null,"26,205",67.3
+Canada,"Accidents (unintentional injuries)  [V01-X59, Y85-Y86]",null,"18,365",47.2
+Canada,"Intentional self-harm (suicide)  [X60-X84, Y87.0]",null,"3,593",9.2
+Canada,"Assault (homicide)  [X85-Y09, Y87.1]",null,306,0.8
+Canada,"Events of undetermined intent  [Y10-Y34, Y87.2, Y89.9]",null,270,0.7
+Canada,"Legal intervention  [Y35, Y89.0]",null,9,0
+Canada,"Operations of war and their sequelae  [Y36, Y89.1]",null,0,0
+Canada,"Complications of medical and surgical care  [Y40-Y84, Y88]",null,279,0.7
