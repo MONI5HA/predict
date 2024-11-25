@@ -8,6 +8,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import r2_score
+import plotly.graph_objects as go
+
 
 app = Flask(__name__)
 static_folder = os.path.join(app.root_path, 'static/images')
@@ -126,6 +128,29 @@ def get_top_diseases():
     # Get top diseases
     return disease_data_cleaned.sort_values(by='Predicted Likelihood', ascending=False).head(10)
 
+# Function to calculate total nutrients
+def calculate_totals():
+    totals = nutrition_data[nutritional_columns].sum()
+    return totals.to_dict()
+
+# Function to generate speedometer charts
+def create_speedometer(value, title, max_value):
+    fig = go.Figure(go.Indicator(
+        mode="gauge+number",
+        value=value,
+        gauge={
+            "axis": {"range": [0, max_value]},
+            "bar": {"color": "blue"},
+            "steps": [
+                {"range": [0, max_value * 0.5], "color": "lightgreen"},
+                {"range": [max_value * 0.5, max_value * 0.75], "color": "yellow"},
+                {"range": [max_value * 0.75, max_value], "color": "red"}
+            ]
+        },
+        title={"text": title}
+    ))
+    return fig.to_html(full_html=False)
+
 # Flask Routes
 @app.route('/')
 def index():
@@ -160,8 +185,18 @@ def generate_recommendations():
 # Flask route for recommendations
 @app.route('/recommendations')
 def recommendations():
+     # Calculate totals
+    totals = calculate_totals()
+    calories_chart = create_speedometer(totals['Calories'], "Total Calories Consumed", 2500)
+    proteins_chart = create_speedometer(totals['Proteins'], "Total Proteins Consumed (g)", 150)
+    carbs_chart = create_speedometer(totals['Carbohydrates'], "Total Carbohydrates Consumed (g)", 300)
+    sugars_chart = create_speedometer(totals['Sugars'], "Total Sugars Consumed (g)", 50)
+
     recommendations = generate_recommendations()  # Generate recommendations dynamically
-    return render_template('recommendations.html', recommendations=recommendations)
+    return render_template('recommendations.html', recommendations=recommendations,calories_chart=calories_chart, 
+                           proteins_chart=proteins_chart, 
+                           carbs_chart=carbs_chart, 
+                           sugars_chart=sugars_chart)
 
 if __name__ == '__main__':
     app.run(debug=True)
