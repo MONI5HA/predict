@@ -30,6 +30,11 @@ disease_data = disease_data[disease_data['Country'] == 'Canada']
 # Clean 'Number of deaths'
 disease_data['Number of deaths'] = disease_data['Number of deaths'].str.replace(',', '').astype(float)
 
+# Calculate total population
+total_population = "41,288,599"
+total_men = "20,638,255"
+total_women = "20,650,344"
+
 # Nutritional Columns
 nutritional_columns = [
     "Calories", "Carbohydrates", "Sugars", "Fiber", "Proteins", "Fats",
@@ -126,8 +131,8 @@ def get_top_diseases():
 def index():
     generate_prediction_charts()  # Generate prediction charts dynamically
     top_diseases = get_top_diseases()  # Fetch top diseases
-    return render_template('index.html', top_diseases=top_diseases)
-
+    return render_template('index.html', top_diseases=top_diseases,total_population=total_population,total_men = total_men,total_women = total_women)
+  
 # Function to find nutrient-rich foods
 def find_nutrient_rich_foods(nutrient):
     nutrient = nutrient.strip().lower()  # Normalize nutrient name

@@ -1,40 +1,152 @@
 {% extends "base.html" %}
+
 {% block content %}
-<h1>Prediction Dashboard</h1>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJfQf3t6B6g0yM4A4p6Xyzy9i4WmJwYaq1wV2V2xtdV6i3Wqmnf7ER+YkYDJ" crossorigin="anonymous">
 
-<h3>Top Foods Eaten in Canada</h3>
-<img src="/static/images/top_foods.png" alt="Top Foods" class="img-fluid">
+<style>
+    body {
+        background-color: #f4f7fa;
+        font-family: 'Arial', sans-serif;
+    }
+    h1 {
+        text-align: center;
+        margin-top: 40px;
+        font-size: 3rem;
+        color: #2c3e50;
+    }
+    h3 {
+        color: #34495e;
+        font-size: 1.75rem;
+        margin-top: 30px;
+    }
+    p {
+        font-size: 1.25rem;
+        color: #555;
+    }
+    .img-fluid {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: 20px auto;
+    }
+    .card {
+    border-radius: 10px;
+    margin-top: 30px;
+    overflow: hidden; /* Prevents background color from spilling over the rounded corners */
+    }
 
-<h3>Top Nutrients Consumed in Canada</h3>
-<img src="/static/images/top_nutrients.png" alt="Top Nutrients" class="img-fluid">
+    .card-header {
+        font-size: 1.10rem;
+        font-weight: bold;
+        background-color: #e36d62;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-color: white;
+        color: white;
+    }
 
-<h3>Average Nutrient Intake in Canada</h3>
-<img src="/static/images/average_nutrients.png" alt="Average Nutrients" class="img-fluid">
+    .card-body {
+        font-size: 1.10rem;
+        background-color: white; 
+        padding: 20px;
+        border-bottom-left-radius: 10px; 
+        border-bottom-right-radius: 10px; 
+    }
 
-<h3>Nutritional Deficiencies in Canada</h3>
-<img src="/static/images/nutritional_deficiencies.png" alt="Nutritional Deficiencies" class="img-fluid">
+    .table-striped tbody tr:nth-child(odd) {
+        background-color: #f9f9f9;
+    }
+    .table {
+        border-collapse: separate;
+        border-spacing: 0;
+    }
+    .container {
+        margin-top: 50px;
+    }
+    .navbar {
+        background-color: #e36d62; 
+    }
+    .card.bg-primary {
+        background-color: #f5a5a0; 
+        color: #fff;
+    }
+    .card.bg-secondary {
+        background-color: #e99891; 
+        color: #fff;
+    }
+    .card.bg-dark {
+        background-color: #d95f54; 
+        color: #fff;
+    }
+</style>
 
-<h3>Top Nutritional Contributors in Canada</h3>
-<img src="/static/images/nutritional_contributors.png" alt="Nutritional Contributors" class="img-fluid">
+<div class="container">
+    <h1>Prediction Dashboard</h1>
 
-<h3>Top Diseases Predicted Based on Nutritional Deficiencies</h3>
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Disease</th>
-            <th>Number of Deaths</th>
-        
-        </tr>
-    </thead>
-    <tbody>
-        {% for index, row in top_diseases.iterrows() %}
-        <tr>
-            <td>{{ row['Disease Name'] }}</td>
-            <td>{{ row['Number of deaths'] }}</td>
-     
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card text-white">
+                <div class="card-header">Total Population</div>
+                <div class="card-body">
+                    <p>{{ total_population }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white">
+                <div class="card-header">Total Men</div>
+                <div class="card-body">
+                    <p>{{ total_men }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white">
+                <div class="card-header">Total Women</div>
+                <div class="card-body">
+                    <p>{{ total_women }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3>Top Foods Eaten in Canada</h3>
+    <img src="/static/images/top_foods.png" alt="Top Foods" class="img-fluid">
+
+    <h3>Top Nutrients Consumed in Canada</h3>
+    <img src="/static/images/top_nutrients.png" alt="Top Nutrients" class="img-fluid">
+
+    <h3>Average Nutrient Intake in Canada</h3>
+    <img src="/static/images/average_nutrients.png" alt="Average Nutrients" class="img-fluid">
+
+    <h3>Nutritional Deficiencies in Canada</h3>
+    <img src="/static/images/nutritional_deficiencies.png" alt="Nutritional Deficiencies" class="img-fluid">
+
+    <h3>Top Nutritional Contributors in Canada</h3>
+    <img src="/static/images/nutritional_contributors.png" alt="Nutritional Contributors" class="img-fluid">
+
+    <h3>Top Diseases Predicted Based on Nutritional Deficiencies</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Disease</th>
+                <th>Number of Deaths</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for index, row in top_diseases.iterrows() %}
+            <tr>
+                <td>{{ row['Disease Name'] }}</td>
+                <td>{{ row['Number of deaths'] }}</td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybG20dFEBS0wG9bEJzR6za9k6pXqShnT+5OHSHR67Hwh43Zv6E" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0ey7UO5o1oZy8jdY3yY4f5qz8ccwcbJwnsRR6qqp8kQsIEWpuPlgR1hN" crossorigin="anonymous"></script>
 
 {% endblock %}
